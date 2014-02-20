@@ -1,0 +1,85 @@
+@charset "UTF-8";
+/* CSS Document */
+@import url(http://fonts.googleapis.com/css?family=Vast+Shadow|Krona+One);
+
+$color:red;
+$default: #FFFFFF;
+$nav: #999999;
+
+body {
+	background:url(../img/binding_dark.png); 
+}
+
+#wrapper {
+	width: 960px;
+	margin:auto;
+}
+
+a {
+	font-family: 'Krona One', sans-serif;
+	text-decoration: none;
+}
+
+nav a {
+	margin:.5em;
+	display:inline-block;
+}
+
+/* Navs */
+
+#albums {
+	background: $nav;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border-radius:1.5em;
+	text-align: center;
+	background-color: rgba(147, 147, 147, .2);
+	color: rgba(147, 147, 147, .2);
+}
+
+
+.album img {
+	width: 300px;
+	height: 167px;
+	border-radius:1.5em;
+}
+
+h1 {
+	color: $default;
+	font-family: 'Vast Shadow', cursive;
+	font-size: 36px;
+}
+
+#pic {
+	border-radius:1.5em;
+	width: 900px;
+	height: 500px;
+	position: relative;
+	left: 1.5em;
+	top: .5em;
+	margin:auto;
+}
+
+#caption {
+	color: $default;
+	font-family: 'Krona One', sans-serif;
+	text-align: center;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	background-color: rgba(147, 147, 147, .2);
+}
+
+
+.on {
+	color:$color; 
+	font-weight:bold;
+}
+
+.off{
+	color:$default; 
+	font-weight:normal;
+}
+
+.hide{
+	display:none;
+}

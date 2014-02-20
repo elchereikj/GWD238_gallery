@@ -1,0 +1,148 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Stadium Gallery</title>
+<link href="css/gallery.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div id="wrapper">
+    <h1>Stadium Gallery</h1>
+    
+        <nav id="albums"> 
+         <a href="#football" class="on">Football</a>
+         <a href="#soccer">Soccer</a>
+         <a href="#baseball">Baseball</a>
+         <a href="#basketball">Basketball</a>
+        </nav>
+        
+        <img src="img/levistadium.jpg" id="pic" alt="gallery" /><p id="caption">Levi's Stadium</p>
+        
+        <nav id="football" class="album">
+        <a href="img/levistadium.jpg" title="The Big Denim" class="on"><img src="img/levistadium_thumb.jpg" alt="Levi's Stadium" /></a>
+         <a href="img/metlifestadium.jpg" title="Snoopy's House"><img src="img/metlifestadium_thumb.jpg" alt="Met Life Stadium" /></a>
+         <a href="img/fordfield.jpg" title="Motor City"><img src="img/fordfield_thumb.jpg" alt="Ford Field" /></a>
+        </nav>
+        
+        
+        <nav id="soccer" class="album hide"> 
+         <a href="img/emiratesstadium.jpg" title="Emirates Stadium | Arsenal FC"><img src="img/emiratesstadium_thumb.jpg" alt="The Emirates" /></a>
+         <a href="img/campnou.jpg" title="Camp Nou | Barcelona FC"><img src="img/campnou_thumb.jpg" alt="Camp Nou" /></a>
+         <a href="img/oldtrafford.jpg" title="Old Trafford | Manchester United "><img src="img/oldtrafford_thumb.jpg" alt="Old Trafford" /></a>
+         <a href="img/oldtrafford.jpg" title="Anfield | Liverpool FC"><img src="img/oldtrafford_thumb.jpg" alt="Anfield" /></a>
+         <a href="img/oldtrafford.jpg" title="De Meer Stadion | Ajax"><img src="img/oldtrafford_thumb.jpg" alt="De Meer Stadion" /></a>
+         <a href="img/oldtrafford.jpg" title="Estadio Da Luz | Benfica"><img src="img/oldtrafford_thumb.jpg" alt="Estadio Da Luz" /></a>
+         <a href="img/oldtrafford.jpg" title="Signal Iduna Park | Borussia Dortmund"><img src="img/oldtrafford_thumb.jpg" alt="Signal Iduna Park" /></a>
+         <a href="img/oldtrafford.jpg" title="Stadium Of Lights | Sunderland"><img src="img/oldtrafford_thumb.jpg" alt="Stadium Of Lights" /></a>
+         <a href="img/oldtrafford.jpg" title="Stamford Bridge | Chelsea"><img src="img/oldtrafford_thumb.jpg" alt="Stamford Bridge" /></a>
+         <a href="img/oldtrafford.jpg" title="White Hart Lane | Tottenham"><img src="img/oldtrafford_thumb.jpg" alt="White Hart Lane" /></a>
+        </nav>
+        
+        
+        <nav id="baseball" class="album hide"> 
+         <a href="img/attpark.jpg" title="The SF Treat"><img src="img/attpark_thumb.jpg" alt="AT&T Park"</a>
+         <a href="img/yankeestadium.jpg" title="The Bronx Palace"><img src="img/yankeestadium_thumb.jpg" alt="Yankee Stadium" /></a>
+         <a href="img/turnerfield.jpg" title="The Big Coke Bottle"><img src="img/turnerfield_thumb.jpg" alt="Turner Field" /></a>
+        </nav>
+        
+        <nav id="basketball" class="album hide"> 
+         <a href="img/attpark.jpg" title="The SF Treat"><img src="img/attpark_thumb.jpg" alt="AT&T Park"</a>
+         <a href="img/yankeestadium.jpg" title="The Bronx Palace"><img src="img/yankeestadium_thumb.jpg" alt="Yankee Stadium" /></a>
+         <a href="img/turnerfield.jpg" title="The Big Coke Bottle"><img src="img/turnerfield_thumb.jpg" alt="Turner Field" /></a>
+        </nav>
+        
+</div>
+<script>
+
+init();
+
+function init() 
+{
+    var links = document.querySelectorAll('.album a');
+    for (var i = 0, j = links.length; i < j; i++) 
+    {
+        links[i].addEventListener('click', changePic);
+        links[i].addEventListener('click', function (evt) {
+            setStatus(evt, '.album a');
+        });
+    }
+
+    var albums = document.querySelectorAll('#albums a');
+    for (var k = 0, l = albums.length; k < l; k++) 
+    {
+        albums[k].addEventListener('click', changeAlbum);
+        albums[k].addEventListener('click', function (evt) {
+            setStatus(evt, '#albums a');
+        });
+    }
+}
+
+
+function changePic(evt) 
+{
+    evt.preventDefault();
+    var target = evt.target;
+	
+	if (evt.target.nodeName === "IMG")
+	{
+		target = evt.target.parentNode;
+	}
+	
+    var pic = document.getElementById('pic');
+    var caption = document.querySelector('#caption');
+
+    if (target.parentNode.id === 'albums') 
+    {
+        var href = '#' + evt.target.href.split('#')[1];
+        var album = document.querySelector(href);
+        target = album.getElementsByTagName('A')[0];
+    }
+
+    pic.src = target.href;
+    caption.firstChild.nodeValue = target.title;
+    return false;
+}
+
+
+function setStatus(evt, selector) 
+{
+    evt.preventDefault();
+    var target = evt.target;
+    var target2;
+    var links = document.querySelectorAll(selector);
+
+    if (target.parentNode.id === 'albums') 
+    {
+        var href = '#' + evt.target.href.split('#')[1];
+        var album = document.querySelector(href);
+        var target2 = album.getElementsByTagName('A')[0];
+        target2.className = 'on';
+    }
+
+    for (var i = 0, j = links.length; i < j; i++) 
+    {
+        links[i].className = 'off';
+    }
+    target.className = 'on';
+}
+
+
+function changeAlbum(evt) {
+    evt.preventDefault();
+    var target = '#' + evt.target.href.split('#')[1];
+    var albums = document.querySelectorAll('.album');
+
+    for (var i = 0, j = albums.length; i < j; i++) 
+    {
+        albums[i].classList.add('hide');
+    }
+
+    document.querySelector(target).classList.remove('hide');
+    setStatus(evt, '#albums a');
+    setStatus(evt, '.album a');
+    changePic(evt);
+}
+</script>
+</body>
+</html>
