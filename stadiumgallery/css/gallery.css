@@ -1,63 +1,61 @@
 @import url(http://fonts.googleapis.com/css?family=Vast+Shadow|Krona+One);
 /* CSS Document */
-body {
-  background: url(../img/binding_dark.png); }
-
-#wrapper {
-  width: 960px;
-  margin: auto; }
-
 a {
   font-family: 'Krona One', sans-serif;
-  text-decoration: none; }
+  text-decoration: none;
+  color: #004a94; }
 
 nav a {
   margin: .5em;
   display: inline-block; }
 
+nav.top-bar {
+  background: #004a94; }
+
+.name {
+  position: relative;
+  left: 10em; }
+
 /* Navs */
 #albums {
   background: #999999;
+  /*width: 900px;*/
   padding-top: 5px;
   padding-bottom: 5px;
-  border-radius: 1.5em;
   text-align: center;
   background-color: rgba(147, 147, 147, 0.2);
   color: rgba(147, 147, 147, 0.2); }
 
 .album img {
   width: 300px;
-  height: 167px;
-  border-radius: 1.5em; }
+  height: 167px; }
 
 h1 {
-  color: white;
+  color: #ff7300;
   font-family: 'Vast Shadow', cursive;
   font-size: 36px; }
 
 #pic {
-  border-radius: 1.5em;
   width: 900px;
   height: 500px;
-  position: relative;
-  left: 1.5em;
-  top: .5em;
-  margin: auto; }
+  margin-top: 15px; }
 
 #caption {
-  color: white;
+  color: #004a94;
   font-family: 'Krona One', sans-serif;
   text-align: center;
+  margin-top: 15px;
   padding-top: 5px;
   padding-bottom: 5px;
+  /*width: 900px;*/
   background-color: rgba(147, 147, 147, 0.2); }
 
 .on {
-  color: red;
+  color: #ff7300;
   font-weight: bold; }
 
 .off {
-  color: white;
+  color: #004a94;
   font-weight: normal; }
 
 .hide {

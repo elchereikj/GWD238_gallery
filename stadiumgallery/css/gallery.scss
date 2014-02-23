@@ -2,22 +2,18 @@
 /* CSS Document */
 @import url(http://fonts.googleapis.com/css?family=Vast+Shadow|Krona+One);
 
-$color:red;
+$color: #ff7300;
 $default: #FFFFFF;
+$blue: #004a94;
 $nav: #999999;
 
-body {
-	background:url(../img/binding_dark.png); 
-}
-
-#wrapper {
-	width: 960px;
-	margin:auto;
+body { 
 }
 
 a {
 	font-family: 'Krona One', sans-serif;
 	text-decoration: none;
+	color: $blue;
 }
 
 nav a {
@@ -25,13 +21,22 @@ nav a {
 	display:inline-block;
 }
 
+nav.top-bar {
+	background: #004a94;
+}
+
+.name {
+	position: relative;
+	left: 10em;
+}
+
 /* Navs */
 
 #albums {
 	background: $nav;
+	/*width: 900px;*/
 	padding-top: 5px;
 	padding-bottom: 5px;
-	border-radius:1.5em;
 	text-align: center;
 	background-color: rgba(147, 147, 147, .2);
 	color: rgba(147, 147, 147, .2);
@@ -41,31 +46,28 @@ nav a {
 .album img {
 	width: 300px;
 	height: 167px;
-	border-radius:1.5em;
 }
 
 h1 {
-	color: $default;
+	color: $color;
 	font-family: 'Vast Shadow', cursive;
 	font-size: 36px;
 }
 
 #pic {
-	border-radius:1.5em;
 	width: 900px;
 	height: 500px;
-	position: relative;
-	left: 1.5em;
-	top: .5em;
-	margin:auto;
+	margin-top: 15px;
 }
 
 #caption {
-	color: $default;
+	color: $blue;
 	font-family: 'Krona One', sans-serif;
 	text-align: center;
+	margin-top: 15px;
 	padding-top: 5px;
 	padding-bottom: 5px;
+	/*width: 900px;*/
 	background-color: rgba(147, 147, 147, .2);
 }
 
@@ -76,10 +78,11 @@ h1 {
 }
 
 .off{
-	color:$default; 
+	color:$blue; 
 	font-weight:normal;
 }
 
 .hide{
 	display:none;
 }
+
