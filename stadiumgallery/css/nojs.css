@@ -1,0 +1,63 @@
+@import url(http://fonts.googleapis.com/css?family=Vast+Shadow|Krona+One);
+/* CSS Document */
+a {
+  font-family: 'Krona One', sans-serif;
+  text-decoration: none;
+  color: #004a94; }
+
+nav a {
+  margin: .5em;
+  display: inline-block; }
+
+nav.top-bar {
+  background: #004a94; }
+
+.name {
+  position: relative;
+  left: 10em; }
+
+/* Navs */
+#albums {
+  background: #999999;
+  /*width: 900px;*/
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-align: center;
+  background-color: rgba(147, 147, 147, 0.2);
+  color: rgba(147, 147, 147, 0.2); }
+
+.album img {
+  width: 300px;
+  height: 167px; }
+
+h1 {
+  color: #ff7300;
+  font-family: 'Vast Shadow', cursive;
+  font-size: 36px; }
+
+#pic {
+  width: 900px;
+  height: 500px;
+  margin-top: 15px; }
+
+#caption {
+  color: #004a94;
+  font-family: 'Krona One', sans-serif;
+  text-align: center;
+  margin-top: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  /*width: 900px;*/
+  background-color: rgba(147, 147, 147, 0.2); }
+
+.on {
+  color: #ff7300;
+  font-weight: bold; }
+
+.off {
+  color: #004a94;
+  font-weight: normal; }
+
+.hide {
+  display: none; }
+

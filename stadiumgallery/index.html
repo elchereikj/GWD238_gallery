@@ -4,8 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Stadium Gallery</title>
+    <link id="scripton" href="css/nojs.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="css/foundation.css" />
-    <link href="css/gallery.css" rel="stylesheet" type="text/css">
     <script src="js/vendor/modernizr.js"></script>
   </head>
   <body>
@@ -65,7 +65,7 @@
             </nav>
             
             
-            <nav id="soccer" class="album hide"> 
+            <nav id="soccer" class="album"> 
              <a href="img/soccer/emiratesstadium.jpg" title="Emirates Stadium | Arsenal FC"><img src="img/soccer/thumbs/emiratesstadium_thumb.jpg" alt="The Emirates" /></a>
              <a href="img/soccer/campnou.jpg" title="Camp Nou | Barcelona FC"><img src="img/soccer/thumbs/campnou_thumb.jpg" alt="Camp Nou" /></a>
              <a href="img/soccer/oldtrafford.jpg" title="Old Trafford | Manchester United "><img src="img/soccer/thumbs/oldtrafford_thumb.jpg" alt="Old Trafford" /></a>
@@ -79,7 +79,7 @@
             </nav>
             
             
-            <nav id="baseball" class="album hide"> 
+            <nav id="baseball" class="album"> 
              <a href="img/baseball/attpark.jpg" title="AT&T Park | SF Giants"><img src="img/baseball/thumbs/attpark_thumb.jpg" alt="AT&T Park"</a>
              <a href="img/baseball/yankeestadium.jpg" title="Yankee Stadium | NY Yankees"><img src="img/baseball/thumbs/yankeestadium_thumb.jpg" alt="Yankee Stadium" /></a>
              <a href="img/baseball/turnerfield.jpg" title="Turner Field | ATL Braves"><img src="img/baseball/thumbs/turnerfield_thumb.jpg" alt="Turner Field" /></a>
@@ -92,7 +92,7 @@
              <a href="img/baseball/wrigleyfield.jpg" title="Wrigley Field | Chi Cubs"><img src="img/baseball/thumbs/wrigleyfield_thumb.jpg" alt="Wrigley Field" /></a>
             </nav>
             
-            <nav id="basketball" class="album hide"> 
+            <nav id="basketball" class="album"> 
              <a href="img/basketball/aaarenamia.jpg" title="Amer Airlines Arena | Mia Heat"><img src="img/basketball/thumbs/aaarenamia_thumb.jpg" alt="AA Arena"</a>
              <a href="img/basketball/aircanadacentre.jpg" title="Air Canada Centre | Tor Raptors"><img src="img/basketball/thumbs/aircanadacentre_thumb.jpg" alt="Air Can Centre" /></a>
              <a href="img/basketball/amwaycenter.jpg" title="Amway Center | Orl Magic"><img src="img/basketball/thumbs/amwaycenter_thumb.jpg" alt="Amway Center" /></a>
@@ -119,6 +119,12 @@ init();
 
 function init() 
 {
+	document.getElementById('scripton').href="css/gallery.css";
+	document.getElementById('football').classList.add('hide');
+	document.getElementById('soccer').classList.add('hide');
+	document.getElementById('baseball').classList.add('hide');
+	document.getElementById('basketball').classList.add('hide');
+	
     var links = document.querySelectorAll('.album a');
     for (var i = 0, j = links.length; i < j; i++) 
     {
